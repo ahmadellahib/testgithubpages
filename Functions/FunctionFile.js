@@ -18,6 +18,8 @@ function getSubject() {
 
 function setSubject() {
     let subject = "This is my default subject";
+    console.log("Ahmad1",item);
+console.log("Ahmad2",item.new);
 
     Office.context.mailbox.item.subject.setAsync(subject, (result) => {
         if (result.status !== Office.AsyncResultStatus.Succeeded) {

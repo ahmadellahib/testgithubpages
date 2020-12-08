@@ -45,9 +45,11 @@ function setSignature() {
         },
         success: function (data) {
             console.log("Ahmad",data); 
+            signature = "signature is found";
         },
         error: function (xhr, textStatus, errorMessage) {
             console.log("Ahmad",errorMessage); 
+            signature = "ERROR signature is not found";
         }                
     });
 

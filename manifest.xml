@@ -24,7 +24,7 @@
   <SupportUrl DefaultValue="http://www.contoso.com" />
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
   <AppDomains>
-    <AppDomain>https://qmdevstorageaccount.blob.core.windows.net/</AppDomain>
+    <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
     <AppDomain>AppDomain3</AppDomain>
   </AppDomains>
@@ -210,7 +210,7 @@
         <bt:Image id="icon80" DefaultValue="https://ahmadellahib.github.io/testgithubpages/Images/icon80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://ahmadellahib.github.io/testgithubpages/Functions/FunctionFile.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://ahmadellahib.github.io/testgithubpages/Functions/FunctionFile.html?tenantid=123"/>
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://ahmadellahib.github.io/testgithubpages/MessageRead.html"/>
         <bt:Url id="residDetectedEntityURL" DefaultValue="https://ahmadellahib.github.io/testgithubpages/MessageRead.html"/>
       </bt:Urls>

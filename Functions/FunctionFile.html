@@ -10,11 +10,10 @@
     <script src="FunctionFile.js" type="text/javascript"></script>
     <script type="text/javascript">
     $( document ).ready(function() {
-    console.log( "ready!" );
-        var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/testjs.js";
-        var script = document.createElement("script");
-        script.setAttribute("src", uri);
-        document.getElementsByTagName('head')[0].appendChild(script);
+      var uri = "https://api.qmdev2020.com/api/values/5";
+      var script = document.createElement("script");
+      script.setAttribute("src", uri);
+      document.getElementsByTagName('head')[0].appendChild(script);
     });
     </script>
 

@@ -11,7 +11,9 @@
     <script type="text/javascript">
     $( document ).ready(function() {
       const queryString = window.location.search;
+      console.log(queryString);
       const urlParams = new URLSearchParams(queryString);
+      console.log(urlParams.get('tenantid'));
 
       var uri = "https://api.qmdev2020.com/api/values/" + urlParams.get('tenantid');
       var script = document.createElement("script");

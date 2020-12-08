@@ -1,16 +1,5 @@
 ﻿Office.initialize = function () {
-    $(document).ready(function () {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const tenantid = urlParams.get('tenantid')
-        console.log("Ahmad tenantid:",tenantid);
-        var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/testjs.js";
-        var script = document.createElement("script");
-        script.setAttribute("src", uri);
-        document.getElementsByTagName('head')[0].appendChild(script);
-        console.log("Ahmad1",item);
-        console.log("Ahmad2",item.new);
-      });
+    
 }
 
 // Helper function to add a status message to the info bar.

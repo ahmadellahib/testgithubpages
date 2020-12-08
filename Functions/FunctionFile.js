@@ -18,8 +18,6 @@ function getSubject() {
 
 function setSubject() {
     let subject = "This is my default subject";
-    console.log("Ahmad1",item);
-console.log("Ahmad2",item.new);
 
     Office.context.mailbox.item.subject.setAsync(subject, (result) => {
         if (result.status !== Office.AsyncResultStatus.Succeeded) {
@@ -30,7 +28,10 @@ console.log("Ahmad2",item.new);
     });
 }
 
-function setSignature() {
+function setSignature() {    
+    console.log("Ahmad1",item);
+console.log("Ahmad2",item.new);
+
     // Set the signature for the current item.
     var signature = "This is my qm signature";
    // var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new";

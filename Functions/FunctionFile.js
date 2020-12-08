@@ -32,34 +32,35 @@ function setSignature() {
     // Set the signature for the current item.
     var signature = "This is my qm signature";
     var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new";
-    uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/test.json";
+    uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/testjs.js";
    // uri = "https://api.qmdev2020.com/api/values";
 
-   console.log("Ahmad1",item);
-   console.log("Ahmad2",item.new);
+
   
-    // $.ajax({
-    //     url: uri,
-    //     type:'GET',
-    //     dataType: "jsonp",
-    //     crossDomain:true,
-    //     beforeSend: function (request) {
-    //         request.setRequestHeader("Access-Control-Allow-Origin", "*");
-    //     },
-    //     success: function (data) {
-    //         console.log("Ahmad",data); 
-    //         signature = "signature is found";
-    //     },
-    //     error: function (xhr, textStatus, errorMessage) {
-    //         console.log("Ahmad",errorMessage); 
-    //         signature = "ERROR signature is not found";
-    //     }                
-    // });
+    $.ajax({
+        url: uri,
+        type:'GET',
+        dataType: "jsonp",
+        crossDomain:true,
+        beforeSend: function (request) {
+            request.setRequestHeader("Access-Control-Allow-Origin", "*");
+        },
+        success: function (data) {
+            console.log("Ahmad",data); 
+            signature = "signature is found";
+        },
+        error: function (xhr, textStatus, errorMessage) {
+            console.log("Ahmad",errorMessage); 
+            signature = "ERROR signature is not found";
+        }                
+    });
 
     // method 2
-    // var script = document.createElement("script");
-    // script.setAttribute("src", uri);
-    // console.log("Ahmad",data); 
+    var script = document.createElement("script");
+    script.setAttribute("src", uri);
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+    console.log("Ahmad",item);
 
     Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
         if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {

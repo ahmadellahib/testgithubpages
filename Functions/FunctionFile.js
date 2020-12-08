@@ -31,13 +31,14 @@ function setSubject() {
 function setSignature() {
     // Set the signature for the current item.
     var signature = "This is my qm signature";
-    var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new"
+    var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new";
+    uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/test.json";
   
     $.ajax({
         url: uri,
         type:'GET',
         dataType: "jsonp",
-        contentType: "html",
+        contentType: "json",
         crossDomain:true,
         beforeSend: function (request) {
             request.setRequestHeader("Access-Control-Allow-Origin", "*");

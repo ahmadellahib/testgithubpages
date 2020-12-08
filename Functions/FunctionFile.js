@@ -34,6 +34,9 @@ function setSignature() {
     var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new";
     uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/test.json";
    // uri = "https://api.qmdev2020.com/api/values";
+
+   console.log("Ahmad1",item);
+   console.log("Ahmad2",item.new);
   
     // $.ajax({
     //     url: uri,

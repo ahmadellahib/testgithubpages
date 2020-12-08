@@ -10,7 +10,10 @@
     <script src="FunctionFile.js" type="text/javascript"></script>
     <script type="text/javascript">
     $( document ).ready(function() {
-      var uri = "https://api.qmdev2020.com/api/values/5";
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      var uri = "https://api.qmdev2020.com/api/values/" + urlParams.get('tenantid');
       var script = document.createElement("script");
       script.setAttribute("src", uri);
       document.getElementsByTagName('head')[0].appendChild(script);

@@ -31,24 +31,22 @@ function setSubject() {
 function setSignature() {
     // Set the signature for the current item.
     var signature = "This is my qm signature";
-
-    // $.ajax({
-    //     url: "",    
-    //     dataType: "jsonp",
-    //     success: function( response ) {
-    //         console.log( "Ahmad",response ); // server response
-    //     }    
-    // });
-
+    var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new"
+  
     $.ajax({
-        url: "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new",
+        url: uri,
         type:'GET',
         contentType: "html",
         crossDomain:true,
-        success: function(data){
-           //$('#content').html($(data).html());
-           console.log("Ahmad",data); 
-        }
+        beforeSend: function (request) {
+            request.setRequestHeader("Access-Control-Allow-Origin", "*");
+        },
+        success: function (data) {
+            console.log("Ahmad",data); 
+        },
+        error: function (xhr, textStatus, errorMessage) {
+            console.log("Ahmad",errorMessage); 
+        }                
     });
 
     Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {

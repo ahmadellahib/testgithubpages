@@ -36,6 +36,7 @@ function setSignature() {
     $.ajax({
         url: uri,
         type:'GET',
+        dataType: "jsonp",
         contentType: "html",
         crossDomain:true,
         beforeSend: function (request) {

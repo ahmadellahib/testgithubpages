@@ -33,12 +33,12 @@ function setSignature() {
     var signature = "This is my qm signature";
     var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new";
     uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/test.json";
+    uri = "https://api.qmdev2020.com/api/values"
   
     $.ajax({
         url: uri,
         type:'GET',
         dataType: "jsonp",
-        contentType: "json",
         crossDomain:true,
         beforeSend: function (request) {
             request.setRequestHeader("Access-Control-Allow-Origin", "*");

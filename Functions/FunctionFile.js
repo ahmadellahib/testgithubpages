@@ -36,24 +36,24 @@ function setSignature() {
    // uri = "https://api.qmdev2020.com/api/values";
 
 
-  
-    $.ajax({
-        url: uri,
-        type:'GET',
-        dataType: "jsonp",
-        crossDomain:true,
-        beforeSend: function (request) {
-            request.setRequestHeader("Access-Control-Allow-Origin", "*");
-        },
-        success: function (data) {
-            console.log("Ahmad",data); 
-            signature = "signature is found";
-        },
-        error: function (xhr, textStatus, errorMessage) {
-            console.log("Ahmad",errorMessage); 
-            signature = "ERROR signature is not found";
-        }                
-    });
+    // method 1
+    // $.ajax({
+    //     url: uri,
+    //     type:'GET',
+    //     dataType: "jsonp",
+    //     crossDomain:true,
+    //     beforeSend: function (request) {
+    //         request.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //     },
+    //     success: function (data) {
+    //         console.log("Ahmad",data); 
+    //         signature = "signature is found";
+    //     },
+    //     error: function (xhr, textStatus, errorMessage) {
+    //         console.log("Ahmad",errorMessage); 
+    //         signature = "ERROR signature is not found";
+    //     }                
+    // });
 
     // method 2
     var script = document.createElement("script");

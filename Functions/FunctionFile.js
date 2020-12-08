@@ -8,6 +8,8 @@
         var script = document.createElement("script");
         script.setAttribute("src", uri);
         document.getElementsByTagName('head')[0].appendChild(script);
+        console.log("Ahmad1",item);
+        console.log("Ahmad2",item.new);
       });
 }
 
@@ -69,8 +71,6 @@ function setSignature() {
 //     script.setAttribute("src", uri);
 //     document.getElementsByTagName('head')[0].appendChild(script);
 
-console.log("Ahmad1",item);
-console.log("Ahmad2",item.new);
 
     Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
         if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {

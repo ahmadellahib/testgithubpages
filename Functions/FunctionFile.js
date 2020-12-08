@@ -31,27 +31,7 @@ function setSubject() {
 function setSignature() {
     // Set the signature for the current item.
     var signature = "This is my qm signature";
-    var uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/ahmad.ellahib@strategy-compass.com-new";
-    uri = "https://qmdevstorageaccount.blob.core.windows.net/sc-container/test.json";
-    uri = "https://api.qmdev2020.com/api/values"
-  
-    $.ajax({
-        url: uri,
-        type:'GET',
-        dataType: "jsonp",
-        crossDomain:true,
-        beforeSend: function (request) {
-            request.setRequestHeader("Access-Control-Allow-Origin", "*");
-        },
-        success: function (data) {
-            console.log("Ahmad",data); 
-        },
-        error: function (xhr, textStatus, errorMessage) {
-            console.log("Ahmad",errorMessage); 
-        }                
-    });
-
-    Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
+       Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
         if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
             console.log("setSignatureAsync succeeded");
             statusUpdate("icon16", "Ahmad Setting signature done successfully!");

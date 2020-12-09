@@ -35,23 +35,6 @@ function setSignature() {
     const urlParams = new URLSearchParams(queryString);
     var uri = "https://api.qmdev2020.com/api/values/" + urlParams.get('tenantid');
     uri = "https://localhost:44381/api/values/5";
-    // $.ajax({
-    //     url: uri,
-    //     type:'GET',
-    //     dataType: "jsonp",
-    //     crossDomain:true,
-    //     beforeSend: function (request) {
-    //         request.setRequestHeader("Access-Control-Allow-Origin", "*");
-    //     },
-    //     success: function (data) {
-    //         console.log("Ahmad3",data); 
-    //         signature = "signature is found";
-    //     },
-    //     error: function (xhr, textStatus, errorMessage) {
-    //         console.log("Ahmad",errorMessage); 
-    //         signature = "ERROR signature is not found";
-    //     }                
-    // });
 
     $.ajax({
         url: uri,
@@ -60,7 +43,7 @@ function setSignature() {
         success: function(data) {
             console.log("log response on success");
             console.log(data);
-            signature = data.new;
+            signature = data.Name;
         },
         error: function (xhr, textStatus, errorMessage) {
                 console.log(errorMessage); 

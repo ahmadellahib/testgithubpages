@@ -56,7 +56,7 @@ function setSignature() {
     $.ajax({
         url: uri,
         type:'GET',
-        dataType: "json",
+        dataType: "text",
         success: function(data) {
             console.log("log response on success");
             console.log(data);

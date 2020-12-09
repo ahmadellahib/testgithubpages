@@ -64,8 +64,15 @@
                             -->
   <Permissions>ReadWriteItem</Permissions>
 
+<!-- Ahmad
+To have Outlook activate an add-in for specific conditions, 
+specify activation rules in the add-in manifest by using one of the following Rule elements:
+Rule element (MailApp complexType) - Specifies an individual rule.
+Rule element (RuleCollection complexType) - Combines multiple rules using logical operations.
+-->
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 

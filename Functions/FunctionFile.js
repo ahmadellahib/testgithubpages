@@ -48,18 +48,18 @@ function setSignature() {
         error: function (xhr, textStatus, errorMessage) {
                 console.log(errorMessage); 
                 signature = "ERROR signature is not found";
-            } 
-    });
-
-
-
-    Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
-        if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-            console.log("setSignatureAsync succeeded");
-            statusUpdate("icon16", "Setting signature done successfully!");
-        } else {
-            console.error(asyncResult.error);
-            statusUpdate("icon16", "Setting signature Failed!");
+        },
+        complete: function(data) {
+            console.log("ajax response is completed"); 
+            Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                    console.log("setSignatureAsync succeeded");
+                    statusUpdate("icon16", "Setting signature done successfully!");
+                } else {
+                    console.error(asyncResult.error);
+                    statusUpdate("icon16", "Setting signature Failed!");
+                }
+            });
         }
     });
 }

@@ -56,11 +56,11 @@ function setSignature() {
     $.ajax({
         url: uri,
         type:'GET',
-        dataType: "text",
+        dataType: "json",
         success: function(data) {
             console.log("log response on success");
             console.log(data);
-            signature = data;
+            signature = data.new;
         },
         error: function (xhr, textStatus, errorMessage) {
                 console.log(errorMessage); 
@@ -73,10 +73,10 @@ function setSignature() {
     Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
         if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
             console.log("setSignatureAsync succeeded");
-            statusUpdate("icon16", "Ahmad Setting signature done successfully!");
+            statusUpdate("icon16", "Setting signature done successfully!");
         } else {
             console.error(asyncResult.error);
-            statusUpdate("icon16", "Ahmad Setting signature Failed!");
+            statusUpdate("icon16", "Setting signature Failed!");
         }
     });
 }

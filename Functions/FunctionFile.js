@@ -29,10 +29,11 @@ function setSubject() {
 }
 
 function setSignature() {    
-    // console.log("Ahmad1",item);
-    // console.log("Ahmad2",item.new);
-
-    var uri = "https://api.qmdev2020.com/api/values";
+    // Set the signature for the current item.
+    var signature = "no signature found";
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var uri = "https://api.qmdev2020.com/api/values/" + urlParams.get('tenantid');
 
     // $.ajax({
     //     url: uri,
@@ -52,19 +53,22 @@ function setSignature() {
     //     }                
     // });
 
-    $.ajax
-    ({
+    $.ajax({
+        url: uri,
+        type:'GET',
         dataType: "json",
-        url: "https://api.qmdev2020.com/api/values",
-        success: function(data) 
-        {
+        success: function(data) {
             console.log("log response on success");
             console.log(data);
-        }
+            signature = data;
+        },
+        error: function (xhr, textStatus, errorMessage) {
+                console.log(errorMessage); 
+                signature = "ERROR signature is not found";
+            } 
     });
 
-    // Set the signature for the current item.
-    var signature = item.new;
+
 
     Office.context.mailbox.item.body.setSignatureAsync(signature, { coercionType: "html" }, function (asyncResult) {
         if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {

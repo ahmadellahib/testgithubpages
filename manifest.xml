@@ -47,7 +47,23 @@
     </Form>
   </FormSettings>
 
+
+<!--  Ahmad
+      Permission level      Description
+      __________________________________________________________________________
+      Restricted	          Allows use of entities but not regular expressions.
+     
+      Read                  item	In addition to what is allowed in Restricted, it allows:
+                            regular expressions Outlook add-in API read access getting the item properties and the callback token
+      
+      Read/write	          In addition to what is allowed in Read item, it allows:
+                            full Outlook add-in API access except makeEwsRequestAsync setting the item properties
+  
+      Read/write mailbox	  In addition to what is allowed in Read/write, it allows:
+                            creating, reading, writing items and folders sending items calling makeEwsRequestAsync
+                            -->
   <Permissions>ReadWriteItem</Permissions>
+
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
   </Rule>
@@ -212,7 +228,6 @@
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://ahmadellahib.github.io/testgithubpages/Functions/FunctionFile.html?tenantid=123"/>
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://ahmadellahib.github.io/testgithubpages/MessageRead.html"/>
-        <bt:Url id="residDetectedEntityURL" DefaultValue="https://ahmadellahib.github.io/testgithubpages/MessageRead.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>

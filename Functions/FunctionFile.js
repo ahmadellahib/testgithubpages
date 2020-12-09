@@ -34,7 +34,6 @@ function setSignature() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     var uri = "https://api.qmdev2020.com/api/values/" + urlParams.get('tenantid');
-    uri = "https://localhost:44381/api/values/5";
 
     $.ajax({
         url: uri,

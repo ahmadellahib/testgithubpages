@@ -29,8 +29,8 @@ function setSubject() {
 }
 
 function setSignature() {    
-    console.log("Ahmad1",item);
-    console.log("Ahmad2",item.new);
+    // console.log("Ahmad1",item);
+    // console.log("Ahmad2",item.new);
 
     var uri = "https://api.qmdev2020.com/api/values";
 

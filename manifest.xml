@@ -20,6 +20,7 @@
   <DisplayName DefaultValue="Test Taskpane" />
   <Description DefaultValue="Test taskpane 1"/>
   <IconUrl DefaultValue="https://ahmadellahib.github.io/testgithubpages/Images/icon64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://icons.iconarchive.com/icons/ccard3dev/dynamic-yosemite/128/Icon-Composer-icon.png"/>
 
   <SupportUrl DefaultValue="http://www.contoso.com" />
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
